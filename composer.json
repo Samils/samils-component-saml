@@ -33,7 +33,6 @@
   },
 	"require": {
 		"php": ">=5.6.20",
-    "php_modules/core": "dev-main",
     "php_modules/fs": "dev-main",
     "php_modules/format": "dev-main",
     "php_modules/file-content-getter": "dev-main"
