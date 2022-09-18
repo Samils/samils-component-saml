@@ -32,9 +32,11 @@
     "wiki": "https://github.com/samils/samils-component-saml/wiki"
   },
 	"require": {
-		"php": ">=5.6.20",
-    "php_modules/fs": "dev-main",
-    "php_modules/format": "dev-main",
-    "php_modules/file-content-getter": "dev-main"
-	}
+		"php": ">=5.6.20"
+	},
+  "suggest": {
+    "php_modules/fs": "",
+    "php_modules/format": "",
+    "php_modules/file-content-getter": ""
+  }
 }
