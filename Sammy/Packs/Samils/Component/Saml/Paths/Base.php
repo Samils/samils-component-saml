@@ -40,7 +40,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
    * when trying to run the current command by the cli
    * API.
    */
-  if (!trait_exists('Sammy\Packs\Samils\Component\Saml\Paths\Base')){
+  if (!trait_exists ('Sammy\Packs\Samils\Component\Saml\Paths\Base')) {
   /**
    * @trait Base
    * Base internal trait for the
@@ -62,7 +62,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
      * [Path description]
      * @param string $path [description]
      */
-    public static final function Path ($path = '') {
+    public static function Path ($path = '') {
       if (phpmodule::definedPath ($path)) {
         return phpmodule::path ($path);
       }
@@ -73,7 +73,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
      * @param [type] $path   [description]
      * @param string $source [description]
      */
-    public static final function DefinePath ($path, $source = '') {
+    public static function DefinePath ($path, $source = '') {
       if (is_string ($path) && $path) {
         /**
          * Define the current path in php module
@@ -87,7 +87,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
      * [PathExists description]
      * @param string $path [description]
      */
-    public static final function PathExists ($path = '') {
+    public static function PathExists ($path = '') {
       return phpmodule::definedPath ($path);
     }
 
@@ -96,9 +96,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
      * @param string $path [description]
      */
     public static function ReadPath ($path = '', $backTrace = null) {
-      $backTrace = is_array ($backTrace) ? $backTrace : (
-        debug_backtrace ()
-      );
+      $backTrace = is_array ($backTrace) ? $backTrace : debug_backtrace ();
 
       return phpmodule::readPath ($path, [], $backTrace);
     }
@@ -108,7 +106,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
      * @param string $target
      * @param string $path
      */
-    private static final function ReadPathTarget ($target, $path = null) {
+    private static function ReadPathTarget ($target, $path = null) {
       /**
        * Make sure '$target' is a meta data
        */
@@ -117,7 +115,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
          * Re
          */
         if (preg_match ('/^:*(.+)_dir$/i', $target, $match)) {
-          $dirName = strtolower ($match[1]);
+          $dirName = strtolower ($match [1]);
 
           if (defined ('__' . $dirName . '__')) {
             return constant ('__' . $dirName . '__');
@@ -125,9 +123,7 @@ namespace Sammy\Packs\Samils\Component\Saml\Paths {
             /**
              * Read Module Root Directory
              */
-            return phpmodule::getModuleRootDir (
-              $path, $mt [ 1 ]
-            );
+            return phpmodule::getModuleRootDir ($path, $mt [1]);
           }
         }
       }
